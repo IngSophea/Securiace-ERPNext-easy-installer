@@ -21,7 +21,7 @@
 
  bash FOLDER_SCRIPT/install.sh
 
-## Tested Platforms
+#### Tested Platforms
 
 * Ubuntu
 * CentOS
