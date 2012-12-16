@@ -1,10 +1,10 @@
-=Fast and Easy Web Server Installation
+# Fast and Easy Web Server Installation
  Author: Yashodhan S Kulkarni (YSK) <ysk@securiace.com>
  Twitter: http://twitter.com/yashodhan
  URL: http://securiace.com
  Created: Dec 16, 2012
 
-=Description
+# Description
 "Securiace ERPNext Easy Installer" is a Bash Script that help you to install and configure a Linux server with:
 * ERPNext
 * Iptables (Most secure)
