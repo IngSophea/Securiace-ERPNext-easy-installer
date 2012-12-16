@@ -4,7 +4,7 @@
  URL: http://securiace.com
  Created: Dec 16, 2012
 
-# Description
+## Description
 "Securiace ERPNext Easy Installer" is a Bash Script that help you to install and configure a Linux server with:
 * ERPNext
 * Iptables (Most secure)
@@ -17,11 +17,11 @@
 
 "Securiace ERPNext Easy Installer" was tested on CentOS, Red Hat Enterprise Linux and Ubuntu. and It should works with Mandrake, Debian, Fedora
 
-=Installation
+## Installation
 
  bash FOLDER_SCRIPT/install.sh
 
-=Tested Platforms
+## Tested Platforms
 
 * Ubuntu
 * CentOS
@@ -29,6 +29,6 @@
 * Debian
 * Mandrake  
 
-=Licensed under the GPL
+## Licensed under the GPL
 http://www.gnu.org/licenses/gpl.html
 
