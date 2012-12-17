@@ -1,0 +1,71 @@
+#!/bin/bash
+####################################################################
+# Configuration File
+# Author: Yashodhan S Kulkarni (YSK) <ysk@securiace.com>
+# Twitter: http://twitter.com/yashodhan
+# URL: http://securiace.com
+# Created: Dec 16, 2012
+####################################################################
+folder_Backup=/folder_to_backup
+####################################################################
+# another user to don't work with root user
+####################################################################
+user='username'
+passwd='userpass'
+
+####################################################################
+# Port to conect by SSH
+####################################################################
+port='22'
+
+####################################################################
+# Admin's email
+####################################################################
+mailAdmin='user@domain.tld'
+
+####################################################################
+# Mailserver
+####################################################################
+nameSlice="sliceName"
+ipServer='xxx.xxx.xxx.xxx'
+gateway='xxx.xxx.xxx.1'
+mydomain='domain.tld'
+# note: some times gateway is same to ipServer, but with last number .1
+
+####################################################################
+# DNS
+####################################################################
+zone_id='xxx' # from https://manage.slicehost.com/zones/
+api_password='xxx' # from https://manage.slicehost.com/api
+google_unique_string='xxx' # When you add a Domain Alias in Google Apps
+
+# SPF records: to allow web server send emails.
+# ASPMX & ALT records: to Set up email delivery
+
+dns="
+data = (
+	('NS',	'@',				'ns1.slicehost.net.',	0),
+	('NS',	'@',				'ns2.slicehost.net.',	0),
+	('NS',	'@',				'ns3.slicehost.net.',	0),
+	('A',	'$mydomain.',		'$ipServer',	0),
+	('A',	'SUBDOMAIN_1',			'$ipServer',	0),
+	('A',	'SUBDOMAIN_2',				'$ipServer',	0),
+	('CNAME',	google_string,		'google.com.',	0),
+	('CNAME',	'mail',			'ghs.google.com.',	0),
+	('CNAME',	'calendar',		'ghs.google.com.',	0),
+	('CNAME',	'docs',			'ghs.google.com.',	0),
+	('CNAME',	'moderator',		'ghs.google.com.',	0),
+	('CNAME',	'sites',		'ghs.google.com.',	0),
+	('CNAME',	'short',		'ghs.google.com.',	0),
+	('MX',	'$mydomain.',		'ASPMX.L.GOOGLE.COM.',		10),
+	('MX',	'$mydomain.',		'ALT1.ASPMX.L.GOOGLE.COM.',	20),
+	('MX',	'$mydomain.',		'ALT2.ASPMX.L.GOOGLE.COM.',	20),
+	('MX',	'$mydomain.',		'ASPMX2.GOOGLEMAIL.COM.',	30),
+	('MX',	'$mydomain.',		'ASPMX3.GOOGLEMAIL.COM.',	30),
+	('MX',	'$mydomain.',		'ASPMX4.GOOGLEMAIL.COM.',	30),
+	('MX',	'$mydomain.',		'ASPMX5.GOOGLEMAIL.COM.',	30),
+	('TXT',	'$mydomain.',		spf_value,	0),
+)
+"
+#note: please set SUBDOMAINS before
+
